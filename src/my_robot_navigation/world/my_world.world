@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="my_world">
+
+    <!-- Floor -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Walls -->
+    <!-- Wall 1 -->
+    <include>
+      <uri>model://cube</uri>
+      <pose>2 0 0 0 0 0</pose>
+      <static>true</static>
+      <name>wall1</name>
+      <plugin name="collision" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom collision parameters -->
+      </plugin>
+      <plugin name="visual" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom visual parameters -->
+      </plugin>
+    </include>
+
+    <!-- Wall 2 -->
+    <include>
+      <uri>model://cube</uri>
+      <pose>0 2 0 0 0 1.5708</pose>
+      <static>true</static>
+      <name>wall2</name>
+      <plugin name="collision" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom collision parameters -->
+      </plugin>
+      <plugin name="visual" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom visual parameters -->
+      </plugin>
+    </include>
+
+    <!-- Wall 3 -->
+    <include>
+      <uri>model://cube</uri>
+      <pose>-2 0 0 0 0 0</pose>
+      <static>true</static>
+      <name>wall3</name>
+      <plugin name="collision" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom collision parameters -->
+      </plugin>
+      <plugin name="visual" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom visual parameters -->
+      </plugin>
+    </include>
+
+    <!-- Wall 4 -->
+    <include>
+      <uri>model://cube</uri>
+      <pose>0 -2 0 0 0 1.5708</pose>
+      <static>true</static>
+      <name>wall4</name>
+      <plugin name="collision" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom collision parameters -->
+      </plugin>
+      <plugin name="visual" filename="libgazebo_ros_kobuki.so">
+        <!-- Custom visual parameters -->
+      </plugin>
+    </include>
+
+    <!-- Robot -->
+    <!-- Example of including a robot (e.g., Kobuki robot) -->
+    <include>
+      <uri>model://kobuki</uri>
+      <pose>0 0 0 0 0 0</pose>
+      <name>my_robot</name>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <!-- Parameters for robot control -->
+      </plugin>
+    </include>
+
+    <!-- Example of a light source -->
+    <!-- You can add lights to illuminate your world -->
+    <include>
+      <uri>model://sun</uri>
+      <pose>0 0 10 0 0 0</pose>
+    </include>
+
+    <!-- Example of camera -->
+    <!-- You can add cameras for viewing your simulation -->
+    <include>
+      <uri>model://camera</uri>
+      <pose>0 0 1.5 0 0 0</pose>
+    </include>
+
+    <!-- Example of additional models -->
+    <!-- Add any additional models you want in your world -->
+
+  </world>
+</sdf>
